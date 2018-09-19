@@ -90,7 +90,7 @@ and run `carthage update` when you done this you can link it like Manual link fr
 
 #### Android
 
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
+1. Open up `android/app/src/main/java/[...]/MainApplication.java`
 
 * Add `import com.merryjs.PhotoViewer.MerryPhotoViewPackage;` to the imports at the top of the file
 * Add `new MerryPhotoViewPackage()` to the list returned by the `getPackages()` method
@@ -146,6 +146,15 @@ android {
 If we have any better solution will update this section in the future.
 
 #### Android Fresco initialize
+
+Add Following lines at the top into MainApplication.java after right after 'import android.app.Application'
+
+```
+import com.facebook.drawee.backends.pipeline.DraweeConfig;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.imagepipeline.core.ImagePipelineConfig;
+import com.facebook.imagepipeline.decoder.SimpleProgressiveJpegConfig;
+```
 
 When you have linked you need one more step for initialize the Fresco Library
 
